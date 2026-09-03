@@ -44,4 +44,3 @@ bits[1] = remaining % 2
 remaining = remaining // 2
 bits[0] = remaining % 2 
 remaining = remaining // 2
-
