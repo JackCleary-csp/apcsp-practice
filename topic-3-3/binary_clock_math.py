@@ -29,6 +29,8 @@ selected_index = 2
 clock_value = clock_values[selected_index]
 label = labels[selected_index]
 
+remaining = clock_value
+
 bits = [0,0,0,0,0,0]
 bits[5] = remaining % 2
 remaining = remaining // 2
@@ -42,3 +44,4 @@ bits[1] = remaining % 2
 remaining = remaining // 2
 bits[0] = remaining % 2 
 remaining = remaining // 2
+
