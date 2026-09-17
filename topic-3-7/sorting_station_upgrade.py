@@ -22,12 +22,16 @@ else:
                 destination = "D"
         else:
             destination = "E"
+
 if shape == "CUBE" and size > 60 and mass > 2500:
     destination = "INSPECT"
 else:
     destination = "D"
 if condition == "D":
     destination = "INSPECT"
+
+print(destination)
+
 if destination == "INSPECT":
     destination = "HOLD"
 else:
