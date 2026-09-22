@@ -8,6 +8,10 @@ condition = label[14]
 
 if condition == "D" or size > 50 or mass > 2000:
     destination = "INSPECT"
+    if shape == "CUBE" and size > 60 and mass > 2500:
+        destination = "INSPECT"
+    else:
+        destination = "D"
 else:
     if shape == "BALL":
         if color == "RED" and size > 10:
@@ -22,11 +26,6 @@ else:
                 destination = "D"
         else:
             destination = "E"
-
-if shape == "CUBE" and size > 60 and mass > 2500:
-    destination = "INSPECT"
-else:
-    destination = "D"
 if condition == "D":
     destination = "INSPECT"
 
