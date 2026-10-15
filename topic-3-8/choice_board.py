@@ -31,7 +31,6 @@ print(handicap)
 print(score_avg)
 print(max_score)
 print(min_score)
-print(low_differentials)
 print(avg_differential)
 #assuming all courses are par 72 and rating of 72, this is the handicap I get, for my Upgrade, I will be adding course ratings and different pars which means the differentials are different depending on the difficulty of the course
 
