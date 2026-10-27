@@ -28,6 +28,24 @@ def format_time(seconds):
     text = text + str(remainder)
     return text
 
+def score_select(scores):
+    total = 0
+    highest = scores[0]
+    strong_count = 0
+    for score in scores:
+        total += score
+        if score > highest:
+            score = highest
+        if score >= 80:
+            strong_count += 1
+        if total < 100:
+            level = "Rookie"
+        elif level < 250:
+            level = "Skilled"
+        else:
+            level = "Expert"
+        return level, highest, strong_count, total
+
 def render_status(name, health, energy, elapsed_seconds, best_seconds, scores):
     # Keep this function's name, parameters, and returned report.
     # Add your own helper functions above it.
@@ -48,27 +66,8 @@ def render_status(name, health, energy, elapsed_seconds, best_seconds, scores):
 
 
     # Summarize the recent scores.
-    total = 0
-    for score in scores:
-        total = total + score
-
-    highest = scores[0]
-    for score in scores:
-        if score > highest:
-            highest = score
-
-    strong_count = 0
-    for score in scores:
-        if score >= 80:
-            strong_count = strong_count + 1
-
-    # Choose a level from the total.
-    if total < 100:
-        level = "Rookie"
-    elif total < 250:
-        level = "Skilled"
-    else:
-        level = "Expert"
+    
+    level, total, highest, strong_count = score_select(scores)
 
     # Return one report. \n separates its lines; there is no final \n.
     report = "PLAYER: " + name
