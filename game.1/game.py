@@ -34,14 +34,33 @@ def beat(player_one, player_two):
             winner = 1
         if player_two == 2:
             winner = 0
+    return winner
+
 
     
 
 
 def main():
     # Build your playable game here, calling your functions.
-    pass
+    player_one = random_strategy()
+    player_two = random_strategy()
+    winner = beat(player_one, player_two)
+    player_one = "Player 1", assign(player_one)
+    player_two = "Player 2", assign(player_two)
+    if winner == 0:
+        winner = "TIE"
+    elif winner == 1:
+        winner = "PLAYER 1 WINS"
+    else:
+        winner = "PLAYER 2 WINS"
     
+    
+    print(player_one)
+    print(player_two)
+    print(winner)
+    
+    
+
 
 
 if __name__ == "__main__":
