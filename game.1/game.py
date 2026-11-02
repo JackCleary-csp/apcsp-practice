@@ -42,23 +42,31 @@ def beat(player_one, player_two):
 
 def main():
     # Build your playable game here, calling your functions.
-    player_one = random_strategy()
-    player_two = random_strategy()
-    winner = beat(player_one, player_two)
+    p1_count = 0
+    p2_count = 0
+    for i in range(0, 3):
+        player_one = random_strategy()
+        player_two = random_strategy()
+        round_winner = beat(player_one, player_two)
+        if round_winner == 0:
+            round_winner = "TIE"
+        elif round_winner == 1:
+            round_winner = "PLAYER 1" 
+            p1_count += 1
+        else:
+            round_winner = "PLAYER 2"
+            p2_count += 1
+        
+
     player_one = "Player 1", assign(player_one)
     player_two = "Player 2", assign(player_two)
-    if winner == 0:
-        winner = "TIE"
-    elif winner == 1:
-        winner = "PLAYER 1 WINS"
-    else:
-        winner = "PLAYER 2 WINS"
+   
     
-    
+    print(round_winner)
     print(player_one)
     print(player_two)
-    print(winner)
-    
+    print(p1_count)
+    print(p2_count)
     
 
 
